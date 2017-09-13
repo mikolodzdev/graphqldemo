@@ -21,12 +21,10 @@ console.log('initialise DynamoDB...');
 var AWS = require("aws-sdk");
 AWS.config.loadFromPath('./credentials.json');
 
-// local
-dyn= new AWS.DynamoDB({ endpoint: new AWS.Endpoint('http://localhost:8000') });
+// needed for localhost
+// dyn= new AWS.DynamoDB({ endpoint: new AWS.Endpoint('http://localhost:8000') });
 
-// AWS
-// dyn= new AWS.DynamoDB();
-
+dyn= new AWS.DynamoDB();
 
 var params = {
 TableName : "Projects",
